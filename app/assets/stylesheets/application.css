@@ -172,6 +172,7 @@ input:checked + .slider::before {
   color: #2196f3;
   margin-top: 2%;
 }
+
 .recipe-form {
   display: flex;
   flex-direction: column;
