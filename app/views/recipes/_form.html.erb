@@ -10,28 +10,39 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
+<div class='recipe-form'>
+  <div class='form-input'>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'input'%>
   </div>
 
-  <div>
+  <div class='form-input'>
     <%= form.label :preparation_time, style: "display: block" %>
-    <%= form.number_field :preparation_time %>
+    <%= form.number_field :preparation_time, class: 'input' %>
   </div>
 
-  <div>
-    <%= form.label :cooking_time, style: "display: block" %>
-    <%= form.number_field :cooking_time %>
+  <div class='form-input'>
+    <%= form.label :cooking_time %>
+    <%= form.number_field :cooking_time, class: 'input' %>
   </div>
 
-  <div>
+  <div class='form-input'>
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class: 'input' %>
   </div>
 
+  <%# <div class="field"> %>
+   <%# <%= form.label :public %><br /> %>
+   <%# <%= form.label :public, "True", :value => "True"  %> %>
+   <%# <%= form.radio_button :public, true%> %>
+   <%# <%= form.label :public, "False", :value => "False" %> %>
+   <%# <%= form.radio_button :public, false, :checked => true %> %>
+  <%# </div> %>
+
   <div>
+  <button class= 'create-recipe'>
     <%= form.submit %>
+    </button>
   </div>
 <% end %>
+</div>
