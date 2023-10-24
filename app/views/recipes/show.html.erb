@@ -1,0 +1,48 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class= 'recipe-name-show'><%= @recipe.name %></h1>
+
+<div>
+  <div class='items'>
+    <div>
+      <p class='list'>
+        <strong>Preparation time:</strong>
+        <%= @recipe.preparation_time %> <%= 'hour'.pluralize(@recipe.cooking_time) %>
+      </p>
+      <p class='list'>
+        <strong>Cooking time:</strong>
+        <%= @recipe.cooking_time %> <%= 'hour'.pluralize(@recipe.cooking_time) %>
+      </p>
+      <p class='list'>Steps go here...</p>
+    </div>
+    <div class='toggler'>
+    Public
+ <label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>
+    </div>
+  </div>
+  <div class='btns'>
+  <% if can? :update, @recipe%>
+         <%=link_to "Generate Shopping List", general_shopping_list_index_path, class: "button" %>
+         <%=link_to "Add ingredient", new_recipe_recipe_food_path(@recipe), class: "button" %>
+  <%end%>
+  </div>
+  <div class="table-div">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+
+         <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+  </div>
+</div>
