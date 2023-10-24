@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2023_10_24_160343) do
-=======
-ActiveRecord::Schema[7.0].define(version: 2023_10_24_145649) do
->>>>>>> 29c8f9188c8f3fd313aa28e4c078c5644993f187
+ActiveRecord::Schema[7.0].define(version: 2023_10_24_160344) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +50,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_24_145649) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "foods", "users"
