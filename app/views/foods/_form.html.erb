@@ -10,28 +10,31 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
+<div class='food-form'>
+  <div class='form-input'>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'input'  %>
   </div>
 
-  <div>
+  <div class='form-input'>
     <%= form.label :measurement_unit, style: "display: block" %>
-    <%= form.text_field :measurement_unit %>
+    <%= form.text_field :measurement_unit, class: 'input'  %>
   </div>
 
-  <div>
+  <div class='form-input'>
     <%= form.label :price, style: "display: block" %>
-    <%= form.number_field :price %>
+    <%= form.number_field :price, class: 'input'  %>
   </div>
 
-  <div>
+  <div class='form-input'>
     <%= form.label :quantity, style: "display: block" %>
-    <%= form.number_field :quantity %>
+    <%= form.number_field :quantity, class: 'input' %>
   </div>
 
   <div>
+  <button class='create-food'>
     <%= form.submit %>
+    </button>
+  </div>
   </div>
 <% end %>
