@@ -1,15 +1,16 @@
-<%= form_with(model: food) do |form| %>
-  <% if food.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
+<%= form_with(model: food, html: { class: 'foo'}) do |form| %>
+  <%# <%= render 'shared/error_form_message', resource: food %> %>
+  <%# <% if food.errors.any? %> %>
+    <%# <div style="color: red"> %>
+      <%# <h2><%= pluralize(food.errors.count, "error") %> /prohibited this food from being saved:</h2> %>
 
-      <ul>
-        <% food.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <%# <ul> %>
+        <%# <% food.errors.each do |error| %> %>
+          <%# <li><%= error.full_message %></li> %>
+        <%# <% end %> %>
+      <%# </ul> %>
+    <%# </div> %>
+  <%# <% end %> %>
 <div class='food-form'>
   <div class='form-input'>
     <%= form.label :name, style: "display: block" %>
@@ -33,7 +34,7 @@
 
   <div>
   <button class='create-food'>
-    <%= form.submit %>
+    <%= form.submit 'Add food' %>
     </button>
   </div>
   </div>
