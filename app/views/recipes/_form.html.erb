@@ -31,13 +31,10 @@
     <%= form.text_area :description, class: 'input' %>
   </div>
 
-  <%# <div class="field"> %>
-   <%# <%= form.label :public %><br /> %>
-   <%# <%= form.label :public, "True", :value => "True"  %> %>
-   <%# <%= form.radio_button :public, true%> %>
-   <%# <%= form.label :public, "False", :value => "False" %> %>
-   <%# <%= form.radio_button :public, false, :checked => true %> %>
-  <%# </div> %>
+   <div class="field">
+    <%= form.check_box :public, class: "form-check-input border-dark" %>
+    <%= form.label :public, class: "form-check-label" %>
+   </div>
 
   <div>
   <button class= 'create-recipe'>
