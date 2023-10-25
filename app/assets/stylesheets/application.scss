@@ -1,3 +1,5 @@
+@import 'bootstrap';
+
 * {
   border: 0;
   margin: 0;
@@ -225,4 +227,8 @@ input:checked + .slider::before {
 
 .food-table {
   margin: 5% 10%;
+}
+
+.nav {
+  margin-left: 80%;
 }
