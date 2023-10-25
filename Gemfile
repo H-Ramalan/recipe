@@ -80,5 +80,3 @@ gem 'dotenv-rails', groups: %i[development test]
 gem 'devise', '>= 4.9.3'
 
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
-
-gem 'jbuilder'
