@@ -15,13 +15,18 @@
       </p>
       <p class='list'>Steps go here...</p>
     </div>
-    <div class='toggler'>
-      Public
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </div>
+
+    <% if @recipe.user == current_user %>
+      <div class="toggler">
+        <%= @recipe.public ? 'Public' : 'Private' %>
+        <%= form_for @recipe, url: recipe_path(@recipe), method: :patch, html: { id: 'recipe-form' } do |f| %>
+          <label class="switch">
+            <%= f.check_box :public, { checked: @recipe.public, onchange: 'submitForm()' } %>
+            <span class="slider round"></span>
+          </label>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
   <div class="table-div">
@@ -60,4 +65,10 @@
     </tbody>
   </table>
   </div>
-</div>
+</div>  
+
+<script>
+  function submitForm() {
+    document.getElementById('recipe-form').submit();
+  }
+</script>
