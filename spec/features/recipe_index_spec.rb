@@ -20,8 +20,11 @@ RSpec.feature 'Recipe#index Page', type: :feature do
     expect(page).to have_button('Add Recipe', exact: true)
   end
 
-  # scenario 'user can see name of recipe' do
-  #   visit recipes_path
-  #   expect(page).to have_content(recipe.name)
-  # end
+  scenario 'user can view their own private and public recipes' do
+    user = create(:user)
+    login_as(user, scope: :user)
+    recipe = create(:recipe, user:)
+    visit recipes_path
+    expect(page).to have_content(recipe.name)
+  end
 end
