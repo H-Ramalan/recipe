@@ -31,7 +31,7 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
-   config.before(:each, type: :feature) do
+  config.before(:each, type: :feature) do
     default_url_options[:host] = 'http://127.0.0.1:3000/'
   end
   config.include FactoryBot::Syntax::Methods

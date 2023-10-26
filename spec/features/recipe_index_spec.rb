@@ -24,5 +24,4 @@ RSpec.feature 'Recipe#index Page', type: :feature do
   #   visit recipes_path
   #   expect(page).to have_content(recipe.name)
   # end
-
 end
