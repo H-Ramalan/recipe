@@ -1,5 +1,6 @@
 <h1 class='recipe-heading'>Public Recipes List</h1>
 <div id="recipes">
+    <% index = -1 %>
   <% @public_recipes.each do |public_recipe| %>
     <div id="<%= dom_id public_recipe %>" class = 'recipe-box'>
         <div class = 'recipe'>
@@ -11,7 +12,7 @@
             <strong>Total food items:</strong> <%= public_recipe.recipe_foods.count %>
         </p>
         <p class='recipe-desc'>
-            <strong>Total price:</strong> $75
+            <strong>Total price:</strong> $<%= @total[index+=1] %>
         </p>
         </div>
     </div>
