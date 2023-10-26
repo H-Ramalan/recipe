@@ -1,10 +1,13 @@
 <div id="<%= dom_id recipe %>" class = 'recipe-box'>
 <div class = 'recipe'>
   <h2 class = 'recipe-name'><%= link_to recipe.name, recipe_path(recipe), class: 'recipe-name' %></h2>
-  <%= button_to "REMOVE", recipe, method: :delete, class: 'remove-btn'%>
+  <div class='d-flex gap-3'>
+    <%= link_to "Modify", edit_recipe_path(recipe), class: "btn btn-info text-white" %>
+    <%= button_to "REMOVE", recipe, method: :delete, class: 'btn btn-danger'%>
+  </div>
 </div>
 <p class='recipe-desc'>
   <%= recipe.description %>
- </p>
+</p>
 
 </div>
