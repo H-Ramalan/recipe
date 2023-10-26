@@ -1,2 +1,19 @@
-<h1>PublicRecipes#index</h1>
-<p>Find me in app/views/public_recipes/index.html.erb</p>
+<h1 class='recipe-heading'>Public Recipes List</h1>
+<div id="recipes">
+  <% @public_recipes.each do |public_recipe| %>
+    <div id="<%= dom_id public_recipe %>" class = 'recipe-box'>
+        <div class = 'recipe'>
+            <h2 class = 'recipe-name'><%= link_to public_recipe.name, recipe_path(public_recipe), class: 'recipe-name' %></h2>
+            <h5 class="recipe-name">by <%= public_recipe.user.name.titleize %></h5>
+        </div>
+        <div>
+        <p class='recipe-desc'>
+            <strong>Total food items:</strong> <%= public_recipe.recipe_foods.count %>
+        </p>
+        <p class='recipe-desc'>
+            <strong>Total price:</strong> $75
+        </p>
+        </div>
+    </div>
+  <% end %>
+</div>
