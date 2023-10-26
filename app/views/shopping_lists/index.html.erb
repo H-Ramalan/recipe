@@ -1,0 +1,34 @@
+<h1 class='recipe-heading'>General Shopping List</h1>
+
+<div class="d-flex justify-content-around mt-5 mx-5">
+   <p>
+   <strong>Amount of food to buy:</strong> <%= @total_foods %>
+   </p>
+   <p>
+   <strong>Total value of food needed:</strong> $<%= @total_price %>
+   </p>
+</div>
+
+<div class='food-table'>
+<% if @recipe_foods.count > 0 %>
+   <table class="table" >
+      <thead>
+      <tr>
+         <th class="table-item" >Name</th>
+         <th class="table-item">Quantity</th>
+         <th class="table-item">Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @recipe_foods.each do |recipe_food| %>
+        <tr>
+        <td class="t-item"><%= recipe_food.food.name %></td>
+        <td class="t-item d-flex gap-2"><span><%= recipe_food.quantity %></span><span><%= recipe_food.food.measurement_unit %></span></td>
+        <td class="t-item">$<%= recipe_food.food.price * recipe_food.quantity %></td>
+        </tr>
+      <% end %>
+      </tbody>
+   <%else%>
+      <h2>No foods</h2>
+<%end%>
+</div>
