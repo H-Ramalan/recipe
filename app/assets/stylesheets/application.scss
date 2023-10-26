@@ -231,4 +231,6 @@ input:checked + .slider::before {
 
 .nav {
   margin-left: 80%;
+  display: flex;
+  align-items: center;
 }
