@@ -1,0 +1,83 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class= 'recipe-name-show'><%= @recipe.name %></h1>
+
+<div>
+  <div class='items'>
+    <div>
+      <p class='list'>
+        <strong>Preparation time:</strong>
+        <%= @recipe.preparation_time %> 
+      </p>
+      <p class='list'>
+        <strong>Cooking time:</strong>
+        <%= @recipe.cooking_time %> 
+      </p>
+      <p class='list'>Steps go here...</p>
+    </div>
+
+    <% if @recipe.user == current_user %>
+      <div class="toggler">
+        <%= @recipe.public ? 'Public' : 'Private' %>
+        <%= form_for @recipe, url: recipe_path(@recipe), method: :patch, html: { id: 'recipe-form' } do |f| %>
+          <label class="switch">
+            <%= f.check_box :public, { checked: @recipe.public, onchange: 'submitForm()' } %>
+            <span class="slider round"></span>
+          </label>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="d-flex justify-content-between mt-5 mx-5">
+    <button type="button" class="btn btn-success">
+      <%=link_to 'Generate Shopping list', shopping_lists_path, class: 'text-white text-decoration-none'%>
+    </button>
+    <button type="button" class="btn btn-primary">
+      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: "text-white text-decoration-none" %>
+    </button>
+  </div>
+
+  <hr>
+
+  <div class="table-div">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+
+         <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @recipe.user == current_user %>
+        <% @recipe.recipe_foods.each do |recipe_food| %>
+        <tr>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.quantity %></td>
+        <td><%= recipe_food.quantity * recipe_food.food.price %></td>
+        <td>
+        <div class="d-flex gap-2">
+        <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe, recipe_food), class: "btn btn-info text-white" %>
+        <%= button_to "Remove", recipe_recipe_food_path(@recipe, recipe_food), :method => :delete, class: 'btn btn-danger', data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
+        </div>
+        </td>
+        </tr>
+        <% end %>
+        <% else %>
+        <tr>
+        <td> No ingredient avaialable for rthis recipe</td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>  
+
+<script>
+  function submitForm() {
+    document.getElementById('recipe-form').submit();
+  }
+</script>

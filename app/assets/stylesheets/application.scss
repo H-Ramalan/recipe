@@ -1,0 +1,236 @@
+@import 'bootstrap';
+
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.recipe-box {
+  border: 2px black solid;
+  border-radius: 5px;
+  margin: 4% 10%;
+  padding: 35px 5%;
+  display: flex;
+  gap: 35%;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.add-recipe {
+  padding: 10px 30px;
+  margin: 3% 9%;
+  border: 2px black solid;
+  border-radius: 5px;
+}
+
+.recipe-name {
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.remove-btn {
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.recipe-desc {
+  font-size: 20px;
+}
+
+.recipe-name-show {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 3%;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 5%;
+}
+
+.list {
+  font-size: 25px;
+  margin: 20px 0;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin: 3% 5%;
+}
+
+.btn {
+  padding: 10px 30px;
+  border: 2px black solid;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.table-div {
+  margin: 2% 5%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider::before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.form-input {
+  width: 50%;
+  margin: 0 5%;
+}
+
+.input {
+  border: solid 2px black;
+  width: 50vw;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.create-recipe {
+  padding: 10px 0;
+  border: 2px black solid;
+  border-radius: 5px;
+  font-weight: 600;
+  width: 50vw;
+}
+
+.new-recipe {
+  text-align: center;
+  margin: 3% 0;
+}
+
+.recipe-heading {
+  text-align: center;
+  color: #2196f3;
+  margin-top: 2%;
+}
+
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new_user {
+  margin-top: 3%;
+}
+
+.sign-up {
+  margin-left: 5%;
+  color: #2196f3;
+  margin-top: 2%;
+}
+
+.links {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.create-food {
+  padding: 10px 0;
+  border: 2px black solid;
+  border-radius: 5px;
+  font-weight: 600;
+  width: 50vw;
+  margin-left: 5%;
+}
+
+.food-form {
+  margin-top: 3%;
+}
+
+.food-heading {
+  text-align: center;
+  color: #2196f3;
+  margin-top: 2%;
+  font-size: 35px;
+}
+
+.add-food {
+  padding: 10px 30px;
+  margin: 3% 9%;
+  border: 2px black solid;
+  border-radius: 5px;
+  float: right;
+}
+
+.food-table {
+  margin: 5% 10%;
+}
+
+.nav {
+  margin-left: 70%;
+  display: flex;
+  align-items: center;
+}

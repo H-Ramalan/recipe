@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+<h1 class='recipe-heading'>RECIPES</h1>
+<button class = 'add-recipe'>
+<%= link_to "Add Recipe", new_recipe_path, class: 'link' %>
+</button>
+<div id="recipes">
+  <% @recipes.each do |recipe| %>
+    <%= render recipe %>
+  <% end %>
+</div>
